@@ -82,7 +82,7 @@ spec:
         - name: PXC_STRICT_MODE
           value: {{ default "ENFORCING" .Values.pxc_strict_mode | quote }}
         - name: DEBUG
-          value: "true"
+          value: {{ default "false" .Values.debug | quote }}
         ports:
         - name: mysql
           containerPort: 3306
